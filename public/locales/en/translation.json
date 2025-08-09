@@ -1,5 +1,52 @@
 {
   "lng": "Change language",
   "welcome": "Welcome to our application!",
-  "more": "More info"
+  "more": "More info",
+
+  "how_we_work": "How we work?",
+  "how_we_work_section_aria": "Information about how we work",
+
+  "operatively": "Operatively",
+  "operatively_desc": "Fast logistics, prompt order execution.",
+
+  "reliably": "Reliably",
+  "reliably_desc": "Cargo security is our responsibility.",
+
+  "optimally": "Optimally",
+  "optimally_desc": "Optimal routes to save time and resources.",
+
+  "comfortably": "Comfortably",
+  "comfortably_desc": "Comfort and reliability in every shipment.",
+
+  "Home": "Home",
+  "About": "About",
+  "menu": "Menu",
+  "navigation": "Main navigation menu",
+  "mobile_navigation": "Mobile navigation menu",
+  "open_menu": "Open menu",
+
+  "logistics_delivery": "Logistics delivery",
+  "home_intro": "Send or receive parcels to anyone, anywhere, anytime — in just a few simple steps.",
+  "hero_alt": "Hero image",
+
+  "phoneModal": {
+    "title": "Order a call",
+    "description": "Leave your name, phone number and message, we will contact you",
+    "name": "Name",
+    "name_placeholder": "Your name",
+    "phone": "Phone",
+    "message": "Message",
+    "message_placeholder": "Your message...",
+    "submit": "Send",
+    "thank_you": "Thank you! We received your request."
+  },
+  "validation": {
+    "name_min": "Name must be at least 2 characters long.",
+    "phone_invalid": "Please enter a valid phone number.",
+    "message_min": "Message must be at least 5 characters long."
+  },
+  "error": {
+    "general": "An error occurred.",
+    "submit": "Error sending the form."
+  }
 }
