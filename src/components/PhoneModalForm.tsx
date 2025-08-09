@@ -74,26 +74,25 @@ export const PhoneModalForm: React.FC<PhoneModalFormProps> = ({ open, onOpenChan
         <AnimatePresence>
           {open && (
               <Dialog open={open} onOpenChange={onOpenChange}>
-                <DialogContent className="bg-orange-600 p-6 rounded-2xl">
+                <DialogContent className="bg-white p-8 rounded-2xl max-w-md mx-auto shadow-lg">
                   <motion.div
-                      initial={{ opacity: 0, scale: 0.8, rotateX: -30 }}
+                      initial={{ opacity: 0, scale: 0.9, rotateX: -15 }}
                       animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                      exit={{ opacity: 0, scale: 0.8, rotateX: 30 }}
-                      transition={{ duration: 0.5, ease: 'easeInOut' }}
-                      className="bg-zinc-900 rounded-xl p-10 shadow-2xl"
-                      style={{ transformOrigin: 'center', perspective: 1000 }}
+                      exit={{ opacity: 0, scale: 0.9, rotateX: 15 }}
+                      transition={{ duration: 0.4, ease: 'easeInOut' }}
+                      style={{ transformOrigin: 'center', perspective: 800 }}
                   >
                     <div>
-                      <DialogTitle className="text-white text-center text-lg font-semibold">
+                      <DialogTitle className="text-black text-center text-xl font-semibold mb-1">
                         {t('phoneModal.title')}
                       </DialogTitle>
-                      <DialogDescription className="text-gray-300 mt-2 text-center mb-6">
+                      <DialogDescription className="text-gray-600 text-center mb-6">
                         {t('phoneModal.description')}
                       </DialogDescription>
 
-                      <form onSubmit={handleSubmit} className="space-y-6">
+                      <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
-                          <Label htmlFor="name" className="text-gray-300 pb-2">
+                          <Label htmlFor="name" className="text-black mb-1 block font-medium">
                             {t('phoneModal.name')}
                           </Label>
                           <Input
@@ -103,12 +102,12 @@ export const PhoneModalForm: React.FC<PhoneModalFormProps> = ({ open, onOpenChan
                               value={name}
                               onChange={(e) => setName(e.target.value)}
                               required
-                              className="bg-zinc-800 text-white placeholder-gray-400 border-none py-3 px-4 rounded-md focus:ring-2 focus:ring-orange-600 focus:outline-none"
+                              className="bg-white border border-gray-300 text-black placeholder-gray-400 py-3 px-4 rounded-md focus:ring-2 focus:ring-orange-500 focus:outline-none"
                           />
                         </div>
 
                         <div>
-                          <Label htmlFor="phone" className="text-gray-300 pb-2">
+                          <Label htmlFor="phone" className="text-black mb-1 block font-medium">
                             {t('phoneModal.phone')}
                           </Label>
                           <Input
@@ -118,12 +117,12 @@ export const PhoneModalForm: React.FC<PhoneModalFormProps> = ({ open, onOpenChan
                               value={phone}
                               onChange={(e) => setPhone(e.target.value)}
                               required
-                              className="bg-zinc-800 text-white placeholder-gray-400 border-none py-3 px-4 rounded-md focus:ring-2 focus:ring-orange-600 focus:outline-none"
+                              className="bg-white border border-gray-300 text-black placeholder-gray-400 py-3 px-4 rounded-md focus:ring-2 focus:ring-orange-500 focus:outline-none"
                           />
                         </div>
 
                         <div>
-                          <Label htmlFor="message" className="text-gray-300 pb-2">
+                          <Label htmlFor="message" className="text-black mb-1 block font-medium">
                             {t('phoneModal.message')}
                           </Label>
                           <textarea
@@ -132,13 +131,13 @@ export const PhoneModalForm: React.FC<PhoneModalFormProps> = ({ open, onOpenChan
                               value={message}
                               onChange={(e) => setMessage(e.target.value)}
                               required
-                              className="w-full bg-zinc-800 text-white placeholder-gray-400 border-none py-3 px-4 rounded-md focus:ring-2 focus:ring-orange-600 focus:outline-none resize-none h-24"
+                              className="w-full bg-white border border-gray-300 text-black placeholder-gray-400 py-3 px-4 rounded-md focus:ring-2 focus:ring-orange-500 focus:outline-none resize-none h-24"
                           />
                         </div>
 
-                        {error && <p className="text-red-500 text-sm">{error}</p>}
+                        {error && <p className="text-red-600 text-sm">{error}</p>}
 
-                        <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3">
+                        <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-semibold transition-colors">
                           {t('phoneModal.submit')}
                         </Button>
                       </form>
@@ -156,7 +155,7 @@ export const PhoneModalForm: React.FC<PhoneModalFormProps> = ({ open, onOpenChan
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3 }}
-                  className="fixed bottom-6 right-6 bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+                  className="fixed bottom-6 right-6 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-medium"
               >
                 {t('phoneModal.thank_you')}
               </motion.div>
