@@ -26,7 +26,7 @@
   "open_menu": "Open menu",
 
   "logistics_delivery": "Logistics delivery",
-  "home_intro": "Send or receive parcels to anyone, anywhere, anytime — in just a few simple steps.",
+  "home_intro": "Organize the transportation of items to anyone, anywhere, anytime — simply and quickly.",
   "hero_alt": "Hero image",
 
   "phoneModal": {
@@ -48,5 +48,14 @@
   "error": {
     "general": "An error occurred.",
     "submit": "Error sending the form."
+  },
+
+  "contact_card": {
+    "contact_card_title": "Contact Info",
+    "messengers_available": "Messengers available",
+    "phone_1": "+380 93 505 6008",
+    "phone_2": "+380 98 505 6008",
+    "email": "romamateiko@gmail.com",
+    "hero_alt": "Hero image"
   }
 }
