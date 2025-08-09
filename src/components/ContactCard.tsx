@@ -8,8 +8,7 @@ export default function ContactCard() {
 
     return (
         <motion.div
-            className="relative mt-[60px] w-full max-w-4xl h-[320px] rounded-xl shadow-2xl overflow-hidden select-none
-                 flex flex-col md:flex-row"
+            className="relative mt-[60px] w-full max-w-4xl min-h-[320px] h-auto rounded-xl shadow-2xl overflow-hidden select-none flex flex-col md:flex-row"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -23,7 +22,7 @@ export default function ContactCard() {
             }}
         >
             {/* Картинка */}
-            <div className="w-full md:w-1/2 h-[220px] md:h-full overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-tr-none relative">
+            <div className="w-full md:w-1/2 h-48 md:h-full overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-tr-none relative">
                 <img
                     src={headerBG}
                     alt={t('contact_card.hero_alt', 'Hero image')}
@@ -39,33 +38,70 @@ export default function ContactCard() {
             {/* Темный блок с контактами */}
             <div
                 className="
-          bg-zinc-900 text-white p-8
-          w-full md:w-1/2
-          rounded-b-xl md:rounded-r-xl md:rounded-tl-none
-          flex flex-col justify-center gap-6
-          relative
-          md:static
-          "
+                    bg-zinc-900 text-white p-6 md:p-8
+                    w-full md:w-1/2
+                    rounded-b-xl md:rounded-r-xl md:rounded-tl-none
+                    flex flex-col justify-center gap-4
+                    relative md:static
+                    max-h-[calc(100vh-150px)] overflow-auto
+                "
                 style={{
                     backdropFilter: 'none',
                     backgroundColor: 'rgba(24, 24, 27, 0.95)',
                 }}
             >
                 <style>{`
-                    @media (max-width: 768px) {
-                        div.relative.md\\:static {
-                            position: absolute !important;
-                            top: 120px;
-                            left: 20px;
-                            right: 20px;
-                            background-color: rgba(24, 24, 27, 0.85) !important;
-                            border-radius: 1rem !important;
-                            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                            backdrop-filter: saturate(180%) blur(20px);
-                            z-index: 10;
-                        }
-                    }
-                `}</style>
+    @media (max-width: 768px) {
+        div.relative.md\\:static {
+            position: absolute !important;
+            top: 100px; /* выше, чтобы заголовок не скрывался */
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            background-color: rgba(24, 24, 27, 0.92) !important;
+            border-radius: 1rem !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 10;
+            max-height: calc(100vh - 130px);
+            overflow-y: auto;
+            padding-top: 1.5rem; /* запас сверху для текста */
+        }
+
+        /* Яркий и заметный скролл */
+        div.relative.md\\:static::-webkit-scrollbar {
+            width: 10px;
+        }
+        div.relative.md\\:static::-webkit-scrollbar-thumb {
+            background-color: #ff7300; /* ярко-оранжевый */
+            border-radius: 8px;
+            border: 2px solid rgba(0,0,0,0.3);
+        }
+        div.relative.md\\:static::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+        }
+
+        /* Firefox */
+        div.relative.md\\:static {
+            scrollbar-width: thick;
+            scrollbar-color: #ff7300 rgba(255,255,255,0.15);
+        }
+    }
+
+    @media (max-width: 400px) {
+        div.relative.md\\:static {
+            top: 90px !important;
+            padding: 1rem !important;
+        }
+        h2.text-3xl {
+            font-size: 1.5rem !important;
+        }
+        a.text-lg {
+            font-size: 0.875rem !important;
+        }
+    }
+`}</style>
 
                 <h2 className="text-3xl font-bold">{t('contact_card.contact_card_title')}</h2>
 
