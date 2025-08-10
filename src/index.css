@@ -118,3 +118,21 @@
     @apply bg-background text-foreground;
   }
 }
+@media (max-width: 768px) {
+  div.relative.md\:static {
+    position: absolute !important;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    background-color: rgba(24, 24, 27, 0.92) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 10;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+    padding-top: 1.7rem;
+    width: 100%;
+  }
+}

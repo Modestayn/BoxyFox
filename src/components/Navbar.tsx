@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/sheet';
 import { TranslateBtn } from './TranslateBtn';
 import { useTranslation } from 'react-i18next';
-
+import logo from '../assets/img/logo.png'
 export const Navbar = () => {
   const { t } = useTranslation();
   const [isSticky, setIsSticky] = useState(false);
@@ -40,9 +40,10 @@ export const Navbar = () => {
             {/* Лого */}
             <Link
                 to='/'
-                className='text-orange-600 font-bold text-2xl tracking-tight hover:opacity-90 transition'
+                className='text-orange-600 font-bold text-2xl tracking-tight hover:opacity-90 transition flex items-center'
             >
               BoxyFox
+              <img width='70px' className='ml-[-30px]' src={logo} alt="BoxyFox"/>
             </Link>
 
             {/* Десктоп навігація */}

@@ -4,12 +4,15 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import HowWeWork from "@/components/HowWeWork.tsx";
 import ContactCard from "@/components/ContactCard.tsx";
-
+import {VehicleCarousel} from "@/components/VehicleCarousel.tsx";
+import {useState} from "react";
+import {PhoneModalForm} from "@/components/PhoneModalForm.tsx";
 export const Home = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   const { t } = useTranslation();
 
   return (
-      <main className="w-full pt-32 px-0 bg-white font-sans mt-[-70px]">
+      <main className="w-full pt-32 px-0 bg-white font-sans mt-[-30px]">
         <section className="w-full bg-white px-4 md:px-8">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
             <motion.div
@@ -39,32 +42,11 @@ export const Home = () => {
               </div>
             </motion.div>
             <ContactCard/>
-            {/*<motion.div*/}
-            {/*    className="relative mt-[60px] w-full max-w-md sm:max-w-lg md:w-[500px] h-[260px] sm:h-[320px] md:h-[400px] rounded-xl shadow-2xl"*/}
-            {/*    initial={{ opacity: 0, scale: 0.9 }}*/}
-            {/*    whileInView={{ opacity: 1, scale: 1 }}*/}
-            {/*    transition={{ duration: 0.6, delay: 0.2 }}*/}
-            {/*    viewport={{ once: true }}*/}
-            {/*    style={{*/}
-            {/*      perspective: 1200, // создаём перспективу для 3D*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*  <img*/}
-            {/*      src={headerBG}*/}
-            {/*      alt={t("hero_alt")}*/}
-            {/*      className="w-full h-full object-contain rounded-xl"*/}
-            {/*      style={{*/}
-            {/*        transform: "rotateX(10deg) rotateY(-15deg) translateZ(30px)", // небольшой наклон и выдвижение вперёд*/}
-            {/*        boxShadow:*/}
-            {/*            "0 20px 30px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2)", // мягкая тень для объёма*/}
-            {/*        transformStyle: "preserve-3d",*/}
-            {/*        backfaceVisibility: "hidden",*/}
-            {/*      }}*/}
-            {/*  />*/}
-            {/*</motion.div>*/}
           </div>
         </section>
         <HowWeWork />
+        <PhoneModalForm open={modalOpen} onOpenChange={setModalOpen} />
+        <VehicleCarousel onOrderClick={() => setModalOpen(true)} />
       </main>
   );
 };
